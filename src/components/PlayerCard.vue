@@ -1,5 +1,8 @@
 <template>
-  <div class="border-black border m-2 p-2 flex justify-between">
+  <div 
+    class="border m-2 p-2 flex justify-between"
+    :class="healthStyle"
+  >
     <div>
       <h1 class="text-lg font-bold">{{ playerName }}</h1>
       <p> {{ playerPositionUp }} </p>
@@ -16,7 +19,7 @@
 
 
 export default {
-  name: "player-list",
+  name: "player-card",
   props: ['player'],
   computed: {
     playerName(){
@@ -28,6 +31,19 @@ export default {
     },
     playerPositionUp(){
       return this.player.position.toUpperCase()
+    },
+    isInjured() {
+      if(this.player.health == "out"){
+        return true
+      }
+      return false
+    },
+    healthStyle() {
+      return { 
+        'bg-gray-600': this.isInjured, 
+        'border-white': this.isInjured, 
+        'border-black': !this.isInjured 
+      }
     }
   },
   methods: {

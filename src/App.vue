@@ -1,36 +1,49 @@
 <template>
-  <selection-box
-    :selection="selection"
+
+  <nav-bar
+    @change-component="changeSelectedComponent"
   >
-  </selection-box>
-  <player-list 
-    v-for="(player, index) in team.players"
-    :key="index"
-    :player="player"
-    @add-player="addPlayerToSelection"
+  </nav-bar>
+  
+  <keep-alive include="player-view">
+    <component 
+      :is="selectedComponent"
+      v-bind="currentProps"
     >
-    </player-list>
+    </component>
+  </keep-alive>
+  
 </template>
 
 <script>
-import teamData from './data/players.json'
-import PlayerList from './components/PlayerList.vue'
-import SelectionBox from './components/SelectionBox.vue'
+
+import PlayerView from './components/PlayerView.vue'
+import SelectionList from './components/SelectionList.vue'
+import NavBar from './components/navigation/NavBar.vue'
+
 export default {
   name: 'App',
   components: {
-    PlayerList,
-    SelectionBox
+    PlayerView,
+    SelectionList,
+    NavBar
   },
   data() {
     return {
-      team: teamData,
-      selection: []
+      selectedComponent: 'player-view'
+    }
+  },
+  computed: {
+    currentProps() {
+      if(this.selectedComponent == "selection-list"){
+        return { selection: this.selectedComponent }
+      }
+      return false
     }
   },
   methods: {
-    addPlayerToSelection(player){
-      this.selection.push(player)
+    changeSelectedComponent(value){
+      this.selectedComponent = value
     }
   }
 }
