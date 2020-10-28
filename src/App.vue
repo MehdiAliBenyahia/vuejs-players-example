@@ -9,6 +9,7 @@
     <component 
       :is="selectedComponent"
       v-bind="currentProps"
+      @child-event="selectionUpdate"
     >
     </component>
   </keep-alive>
@@ -30,20 +31,24 @@ export default {
   },
   data() {
     return {
-      selectedComponent: 'player-view'
+      selectedComponent: 'player-view',
+      playerSelection: []
     }
   },
   computed: {
     currentProps() {
       if(this.selectedComponent == "selection-list"){
-        return { selection: this.selectedComponent }
+        return { selection: this.playerSelection }
       }
       return false
-    }
+    },
   },
   methods: {
-    changeSelectedComponent(value){
+    changeSelectedComponent(value) {
       this.selectedComponent = value
+    },
+    selectionUpdate(value) {
+      this.playerSelection.push(value)
     }
   }
 }

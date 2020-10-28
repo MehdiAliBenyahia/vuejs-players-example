@@ -3,7 +3,13 @@
     Selection : {{ selection.length }}
     <span v-if="numberSelection">joueur</span>
     <span v-else>joueurs</span>
+
+    <ul>
+      <li v-for="joueur in selection" :key="joueur.name">{{ joueur.name }}</li>
+    </ul>
+
   </div>
+  
 </template>
 
 <script>

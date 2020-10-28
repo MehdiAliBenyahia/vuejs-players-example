@@ -1,16 +1,23 @@
 <template>
-  <selection-box
-    :selection="selection"
-  >
-  </selection-box>
 
-  <player-card 
-    v-for="(player, index) in team.players"
-    :key="index"
-    :player="player"
-    @add-player="addPlayerToSelection"
+  <div class="flex">
+    <selection-box
+      :selection="selection"
     >
-  </player-card>
+    </selection-box>
+
+    <div class="w-4/5 mt-2">
+      <player-card 
+        v-for="(player, index) in team.players"
+        :key="index"
+        :player="player"
+        @add-player="addPlayerToSelection"
+        >
+      </player-card>
+    </div>
+    
+
+  </div>
     
 </template>
 
@@ -34,6 +41,7 @@ export default {
   methods: {
     addPlayerToSelection(player){
       this.selection.push(player)
+      this.$emit('child-event', player)
     }
   }
 }

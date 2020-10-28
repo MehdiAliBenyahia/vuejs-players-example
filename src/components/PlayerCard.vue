@@ -16,14 +16,11 @@
 </template>
 
 <script>
-
-
 export default {
   name: "player-card",
   props: ['player'],
   computed: {
     playerName(){
-      console.log(this.player.name.split('.'))
       if(this.player.name.split('.').length > 1){
         return this.player.name.split('.')[1]
       }
