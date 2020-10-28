@@ -1,5 +1,5 @@
 <template>
-  <div class="border border-black text-center m-4 p-4 w-2/6">
+  <div class="border border-black text-center m-4 p-4">
     Selection : {{ selection.length }}
     <span v-if="numberSelection">joueur</span>
     <span v-else>joueurs</span>

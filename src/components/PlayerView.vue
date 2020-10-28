@@ -1,10 +1,13 @@
 <template>
 
   <div class="flex">
-    <selection-box
-      :selection="selection"
-    >
-    </selection-box>
+    <div class="w-1/5">
+      <selection-box
+        :selection="selection"
+      >
+      </selection-box>
+    </div>
+    
 
     <div class="w-4/5 mt-2">
       <player-card 
