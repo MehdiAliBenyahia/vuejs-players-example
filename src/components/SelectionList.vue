@@ -13,7 +13,7 @@
       >
         <h3>{{ player.name }} ({{ player.number }})</h3>
         <span>Né le {{ player.birthDate }}</span>
-        
+        <img :src="require('../assets/img/' + player.photo)" alt="">
       </div>
     </div>
 
@@ -24,7 +24,7 @@
 <script>
 export default {
   name: "selection-list",
-  props: ['selection']
+  props: ['selection'],
 }
 </script>
 

@@ -1,5 +1,6 @@
 <template>
 
+  <img alt="Vue logo" src="../assets/img/logo.png">
   <div class="flex">
     <div class="w-1/5">
       <selection-box
@@ -50,6 +51,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

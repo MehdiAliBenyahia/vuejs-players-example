@@ -7,7 +7,8 @@
       "country": "CRI",
       "birthDate": "15/12/86",
       "position": "Gardien",
-      "health": "available"
+      "health": "available",
+      "photo": "navas.jpg"
     },
     {
       "number": "5",
@@ -15,7 +16,8 @@
       "country": "BRE",
       "birthDate": "14/05/94",
       "position": "Défenseur",
-      "health": "available"
+      "health": "available",
+      "photo": "navas.jpg"
     },
     {
       "number": "11",
@@ -23,7 +25,8 @@
       "country": "ARG",
       "birthDate": "14/02/88",
       "position": "Milieu",
-      "health": "out"
+      "health": "out",
+      "photo": "navas.jpg"
     },
     {
       "number": "7",
@@ -31,7 +34,8 @@
       "country": "FRA",
       "birthDate": "20/12/1998",
       "position": "Attaquant",
-      "health": "available"
+      "health": "available",
+      "photo": "navas.jpg"
     },
     {
       "number": "10",
@@ -39,7 +43,8 @@
       "country": "BRE",
       "birthDate": "05/02/92",
       "position": "Attaquant",
-      "health": "available"
+      "health": "available",
+      "photo": "navas.jpg"
     }
   ]
 }

@@ -1,5 +1,4 @@
 <template>
-
   <nav-bar
     @change-component="changeSelectedComponent"
   >
